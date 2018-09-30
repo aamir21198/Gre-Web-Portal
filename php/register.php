@@ -40,7 +40,7 @@ if (isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']) &
 
 			if (mysqli_query($conn, $query)) {
 				echo 'Registration successful<br>';
-				echo 'Welcome $user_name';
+				echo "Welcome $user_name";
 			}
 			else {
 				echo "Registration unsuccessful";

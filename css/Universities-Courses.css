@@ -1,0 +1,68 @@
+body, html {
+		height: 100%;
+}
+
+.bg {
+    /*background-image: url("../img/student_with_degree.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+}
+
+p {
+    margin: 0;
+    padding-left: 50px;
+}
+   
+.review {
+    padding: 5px;
+}
+
+.overview {
+    padding: 5px;
+}
+
+.row_1 {
+    margin-top: 10px;
+}
+
+.separator {
+    box-sizing: border-box;
+}
+
+.heading_name, .heading_review {
+    padding-left: 200px;
+}
+
+.info {
+	margin-left: 5%;
+	padding-top: 1.5%;
+	max-width: 30%;
+	word-wrap: break-word;
+}
+
+.sign_or_log {
+	margin-left: 300px;
+	color:  #E0E0E0;
+}
+
+.login_button {
+	margin-left: 10px;
+}
+
+.or{
+	margin-left: 10px;
+}
+
+.signup_button {
+	margin-left: 10px;
+}
+
+.card {
+    background-color: #F0F0F0;
+}
+
+
+
+
