@@ -10,15 +10,12 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../js/Universities-Courses.js"></script>
 </head>
-<!-- <body>
-	<button onclick="callAlert()">Hello</button>
-</body> -->
 <body>
 	<nav class="navbar navbar-dark bg-dark">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div>
-					<a href="" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
+					<a href="../templates/home.html" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
 				</div>
 				<div class="dropdown">
 					<button type="button" class="btn btn-secondary dropdown-toggle mx-2 my-2" data-toggle="dropdown">
@@ -36,17 +33,6 @@
 				</div>
 				<div>
 					<a href="" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
-				</div>
-				<div class="sign_or_log">
-					Already a member?
-					<button onclick="document.getElementById('login').style.display='block'" type="button" class="btn btn-secondary login_button"               data-toggle="dropdown">
-						Login
-					</button>
-					<strong class="or">OR</strong>
-					<button onclick="document.getElementById('Sign-up').style.display='block'" type="button" class="btn btn-secondary signup_button" 
-					data-toggle="dropdown">
-					Sign-up
-					</button>
 				</div>
 			</div>
 		</nav>

@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // require connect.inc.php;
 
 $servername = "localhost";
@@ -39,8 +39,9 @@ if (isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']) &
 			$query = "INSERT INTO Users VALUES ('$user_name', '$password', '$first_name', '$last_name', '$email', '$university', '$course', '$degree', '$college')";
 
 			if (mysqli_query($conn, $query)) {
-				echo 'Registration successful<br>';
-				echo "Welcome $user_name";
+				$_SESSION["uname"] = $_POST['uname'];
+				echo "<script> location.href='LoggedInHome.php'; </script>";
+        		exit;
 			}
 			else {
 				echo "Registration unsuccessful";

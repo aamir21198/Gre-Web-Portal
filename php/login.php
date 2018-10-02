@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // require connect.inc.php;
 
 $servername = "localhost";
@@ -24,8 +24,9 @@ if (isset($_POST['uname']) && isset($_POST['psw'])) {
 		$result = mysqli_query($conn, $query);
 
 		if (mysqli_num_rows($result) > 0) {
-			echo 'Logged In<br>';
-			echo "Welcome $user_name";
+			$_SESSION["uname"] = $_POST['uname'];
+			echo "<script> location.href='LoggedInHome.php'; </script>";
+        	exit;
 		}
 		else {
 			echo "Invalid login";
