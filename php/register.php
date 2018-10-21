@@ -1,6 +1,6 @@
 <?php
 session_start();
-require connect.php;
+require 'connect.inc.php';
 
 // $servername = "localhost";
 // $username = "root";

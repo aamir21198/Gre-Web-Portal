@@ -53,17 +53,18 @@
 							<th width="30%"></th>
 						</tr>
 						<?php
-						$servername = "localhost";
-						$username = "root";
-						$password = "";
-						$dbname = "Gre_portal";
+						// $servername = "localhost";
+						// $username = "root";
+						// $password = "";
+						// $dbname = "Gre_portal";
 
-						$conn = mysqli_connect($servername, $username, $password, $dbname);
+						// $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-						if (!$conn) {
-							die("Connection failed: " . mysqli_connect_error());
-						} 	
-							//echo "Connected successfully<br>";
+						// if (!$conn) {
+						// 	die("Connection failed: " . mysqli_connect_error());
+						// } 	
+
+						require 'connect.inc.php';
 
 						$query = "SELECT * FROM Universities ORDER BY rank";
 						$result = mysqli_query($conn, $query);
