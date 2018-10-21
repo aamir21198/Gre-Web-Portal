@@ -52,17 +52,7 @@
 							<th width="42%" class="heading_review"> Reviews </th>
 							<th width="30%"></th>
 						</tr>
-						<?php
-						// $servername = "localhost";
-						// $username = "root";
-						// $password = "";
-						// $dbname = "Gre_portal";
-
-						// $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-						// if (!$conn) {
-						// 	die("Connection failed: " . mysqli_connect_error());
-						// } 	
+						<?php	
 
 						require 'connect.inc.php';
 

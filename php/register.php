@@ -1,17 +1,6 @@
 <?php
 session_start();
-require 'connect.inc.php';
-
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $dbname = "Gre_portal";
-
-// $conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// if (!$conn) {
-//     die("Connection failed: " . mysqli_connect_error());
-// } 
+require 'connect.inc.php'; 
 
 if (isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']) && isset($_POST['uname']) && isset($_POST['psw'])) {
 	if(!empty($_POST['uname']) && !empty($_POST['psw']))
