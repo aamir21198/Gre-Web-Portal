@@ -21,17 +21,17 @@ session_start();
 						Test Preparation
 					</button>
 					<div class="dropdown-menu bg-light justify-content-center">
-						<a class="dropdown-item text-success" href="https://www.w3schools.com/bootstrap4/bootstrap_dropdowns.asp">Easy</a>
-						<a class="dropdown-item text-warning" href="#">Medium</a>
-						<a class="dropdown-item text-danger" href="#">Hard</a>
-						<a class="dropdown-item text-primary" href="#">Mock Test</a>
+						<a class="dropdown-item text-success" href="/WD/php/quiz.php">Easy</a>
+						<a class="dropdown-item text-warning" href="/WD/php/quiz.php">Medium</a>
+						<a class="dropdown-item text-danger" href="/WD/php/quiz.php">Hard</a>
+						<a class="dropdown-item text-primary" href="/WD/php/quiz.php">Mock Test</a>
 					</div>
 				</div>
 				<div>
 					<a href="Universities-Courses.php" class="nav-link bg-secondary text-light rounded mx-2">Universities/Courses</a>
 				</div>
 				<div>
-					<a href="" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
+					<a href="leaderboard.php" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
 				</div>
 				<div class="sign_or_log">
 					Hello

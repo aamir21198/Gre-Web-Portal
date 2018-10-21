@@ -8,6 +8,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/home.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
@@ -18,17 +19,17 @@
 						Test Preparation
 					</button>
 					<div class="dropdown-menu bg-light justify-content-center">
-						<a class="dropdown-item text-success" href="https://www.w3schools.com/bootstrap4/bootstrap_dropdowns.asp">Easy</a>
-						<a class="dropdown-item text-warning" href="#">Medium</a>
-						<a class="dropdown-item text-danger" href="#">Hard</a>
-						<a class="dropdown-item text-primary" href="#">Mock Test</a>
+						<a class="dropdown-item text-success" href="#" onclick="return login_first();">Easy</a>
+						<a class="dropdown-item text-warning" href="#" onclick="return login_first();">Medium</a>
+						<a class="dropdown-item text-danger" href="#" onclick="return login_first();">Hard</a>
+						<a class="dropdown-item text-primary" href="#" onclick="return login_first();">Mock Test</a>
 					</div>
 				</div>
 				<div>
-					<a href="Universities-Courses.html" class="nav-link bg-secondary text-light rounded mx-2">Universities/Courses</a>
+					<a href="#" class="nav-link bg-secondary text-light rounded mx-2" onclick="return login_first();">Universities/Courses</a>
 				</div>
 				<div>
-					<a href="" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
+					<a href="#" class="nav-link bg-secondary text-light rounded mx-2" onclick="return login_first();">Leaderboard</a>
 				</div>
 				<div class="sign_or_log">
 					Already a member?

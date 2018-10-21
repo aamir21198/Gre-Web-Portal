@@ -12,7 +12,7 @@ session_start();
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body style="background-color: #DCDCDC">
 	<nav class="navbar navbar-dark bg-dark">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -57,118 +57,52 @@ session_start();
 			</div>
 		</nav>
 </nav>
-<div class="bg">
-<div class="container">
-		<header>
-			<div class="pull-center">GRE PRACTISE TEST</div>
+<div class="container" style="width: 90%">
+	<div class="card">
+					<div class="pull-center">GRE PRACTISE TEST</div>
 		</header>
 		<main>
-			<div class="verbal">VERBAL</div>
-			<form class="questionForm" id="v_q1" data-question="1">
-				<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
-				<ul>
-					<li><input name="v_q1" type="radio" value="a" />incriminates</li>
-					<li><input name="v_q1" type="radio" value="b" />valorizes</li>
-					<li><input name="v_q1" type="radio" value="c" />indicts</li>
-					<li><input name="v_q1" type="radio" value="d" />abrogates</li>
-				</ul>
-
-			</form>
-			<form class="questionForm" id="v_q2" data-question="2">
-				<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
-				<ul>
-					<li><input name="v_q2" type="radio" value="a" />incriminates</li>
-					<li><input name="v_q2" type="radio" value="b" />valorizes</li>
-					<li><input name="v_q2" type="radio" value="c" />indicts</li>
-					<li><input name="v_q2" type="radio" value="d" />abrogates</li>
-				</ul>
-
-			</form>
-			<form class="questionForm" id="v_q3" data-question="3">
-				<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
-				<ul>
-					<li><input name="v_q3" type="radio" value="a" />incriminates</li>
-					<li><input name="v_q3" type="radio" value="b" />valorizes</li>
-					<li><input name="v_q3" type="radio" value="c" />indicts</li>
-					<li><input name="v_q3" type="radio" value="d" />abrogates</li>
-				</ul>
-
-			</form>
-			<form class="questionForm" id="v_q4" data-question="4">
-				<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
-				<ul>
-					<li><input name="v_q4" type="radio" value="a" />incriminates</li>
-					<li><input name="v_q4" type="radio" value="b" />valorizes</li>
-					<li><input name="v_q4" type="radio" value="c" />indicts</li>
-					<li><input name="v_q4" type="radio" value="d" />abrogates</li>
-				</ul>
-
-			</form>
-			<form class="questionForm" id="v_q4" data-question="5">
-				<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
-				<ul>
-					<li><input name="v_q4" type="radio" value="a" />incriminates</li>
-					<li><input name="v_q4" type="radio" value="b" />valorizes</li>
-					<li><input name="v_q4" type="radio" value="c" />indicts</li>
-					<li><input name="v_q4" type="radio" value="d" />abrogates</li>
-				</ul>
-
-			</form>
-
-
-		<div class="quants">QUANTS</div>
-			<form class="questionForm" id="q_q1" data-question="1">
-				<h5>If −1&lt;h&lt;0, which of the following has the greatest value?</h3>
-				<ul>
-					<li><input name="q_q1" type="radio" value="a" />1+h</li>
-					<li><input name="q_q1" type="radio" value="b" />1-h</li>
-					<li><input name="q_q1" type="radio" value="c" />1+h^2</li>
-					<li><input name="q_q1" type="radio" value="d" />1-1/h</li>
-				</ul>
-
-			</form>
-			<form class="questionForm" id="q_q2" data-question="2">
-				<h5>If −1&lt;h&lt;0, which of the following has the greatest value?</h3>
-				<ul>
-					<li><input name="q_q2" type="radio" value="a" />1+h</li>
-					<li><input name="q_q2" type="radio" value="b" />1-h</li>
-					<li><input name="q_q2" type="radio" value="c" />1+h^2</li>
-					<li><input name="q_q2" type="radio" value="d" />1-1/h</li>
-				</ul>
-
-			</form>
-			<form class="questionForm" id="q_q3" data-question="3">
-				<h5>If −1&lt;h&lt;0, which of the following has the greatest value?</h3>
-				<ul>
-					<li><input name="q_q3" type="radio" value="a" />1+h</li>
-					<li><input name="q_q3" type="radio" value="b" />1-h</li>
-					<li><input name="q_q3" type="radio" value="c" />1+h^2</li>
-					<li><input name="q_q3" type="radio" value="d" />1-1/h</li>
-				</ul>
-
-			</form>
-
-			<form class="questionForm" id="q_q4" data-question="4">
-				<h5>If −1&lt;h&lt;0, which of the following has the greatest value?</h3>
-				<ul>
-					<li><input name="q_q4" type="radio" value="a" />1+h</li>
-					<li><input name="q_q4" type="radio" value="b" />1-h</li>
-					<li><input name="q_q4" type="radio" value="c" />1+h^2</li>
-					<li><input name="q_q4" type="radio" value="d" />1-1/h</li>
-				</ul>
-
-			</form>
-			<form class="questionForm" id="q_q5" data-question="5">
-				<h5>If −1&lt;h&lt;0, which of the following has the greatest value?</h3>
-				<ul>
-					<li><input name="q_q5" type="radio" value="a" />1+h</li>
-					<li><input name="q_q5" type="radio" value="b" />1-h</li>
-					<li><input name="q_q5" type="radio" value="c" />1+h^2</li>
-					<li><input name="q_q5" type="radio" value="d" />1-1/h</li>
-				</ul>
-
-			</form>
-
+			<div class="card">
+				<div class="verbal">VERBAL</div>
+				<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+					<form class="questionForm" id="v_q1" data-question="1">
+						<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
+						<ul>
+							<li><input name="v_q1" type="radio" value="a" />incriminates</li>
+							<li><input name="v_q1" type="radio" value="b" />valorizes</li>
+							<li><input name="v_q1" type="radio" value="c" />indicts</li>
+							<li><input name="v_q1" type="radio" value="d" />abrogates</li>
+						</ul>
+					</form>
+				</div>
+				<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+					<form class="questionForm" id="v_q1" data-question="1">
+						<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
+						<ul>
+							<li><input name="v_q1" type="radio" value="a" />incriminates</li>
+							<li><input name="v_q1" type="radio" value="b" />valorizes</li>
+							<li><input name="v_q1" type="radio" value="c" />indicts</li>
+							<li><input name="v_q1" type="radio" value="d" />abrogates</li>
+						</ul>
+					</form>
+				</div>
+			</div>
+	
+			<div class="card">
+				<div class="quants">QUANTS</div>
+					<div class="card">
+						<form class="questionForm" id="q_q1" data-question="1">
+							<h5>If −1&lt;h&lt;0, which of the following has the greatest value?</h5>
+							<ul>
+								<li><input name="q_q1" type="radio" value="a" />1+h</li>
+								<li><input name="q_q1" type="radio" value="b" />1-h</li>
+								<li><input name="q_q1" type="radio" value="c" />1+h^2</li>
+								<li><input name="q_q1" type="radio" value="d" />1-1/h</li>
+							</ul>
+						</form>
+					</div>
+				</div>
+			</div>
 		
 
 			<button id="submit"">SUBMIT</button>
@@ -179,10 +113,10 @@ session_start();
 		<footer class="pull-left">TOTAL 2 Questions</div>
 		<script src="../js/jquery.js"></script>
 		<script scr="../js/quiz.js"></script>
-
-	</div>
-</div>	
+	</div>	
+</div>
 </body>
 </html>
 
 
+<header>
