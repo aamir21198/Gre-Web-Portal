@@ -11,6 +11,7 @@ session_start();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../js/quiz.js"></script>
 </head>
 <body style="background-color: #DCDCDC">
 	<nav class="navbar navbar-dark bg-dark">
@@ -64,55 +65,69 @@ session_start();
 		<main>
 			<div class="card">
 				<div class="verbal">VERBAL</div>
-				<div class="card shadow-lg p-3 mb-5 bg-white rounded">
-					<form class="questionForm" id="v_q1" data-question="1">
-						<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
-						<ul>
-							<li><input name="v_q1" type="radio" value="a" />incriminates</li>
-							<li><input name="v_q1" type="radio" value="b" />valorizes</li>
-							<li><input name="v_q1" type="radio" value="c" />indicts</li>
-							<li><input name="v_q1" type="radio" value="d" />abrogates</li>
-						</ul>
-					</form>
-				</div>
-				<div class="card shadow-lg p-3 mb-5 bg-white rounded">
-					<form class="questionForm" id="v_q1" data-question="1">
-						<h5>One element, which may not justify violence itself but which __________ its use, is the belief 					that death in a sacred cause is the proper end of life.</h3>
-						<ul>
-							<li><input name="v_q1" type="radio" value="a" />incriminates</li>
-							<li><input name="v_q1" type="radio" value="b" />valorizes</li>
-							<li><input name="v_q1" type="radio" value="c" />indicts</li>
-							<li><input name="v_q1" type="radio" value="d" />abrogates</li>
-						</ul>
-					</form>
-				</div>
+				<?php
+					require 'connect.inc.php';
+					$query = "SELECT question, A, B, C, D, E FROM Questions WHERE type='Verbal' ORDER BY RAND() LIMIT 3";
+					$result = mysqli_query($conn, $query);
+	 				if (mysqli_num_rows($result) > 0) {
+	 					$counter = 1;
+						while($row = mysqli_fetch_assoc($result)) {
+							echo "
+								<div class='card shadow-lg p-3 mb-5 bg-white rounded'>
+									<form class='questionForm' id='question_$counter' data-question='1'>
+									<h5>" . $row['question'] . "</h5>
+									<ul>
+										<li><input name='question_options_$counter' type='radio' value='A' />" . $row["A"] . "</li>
+										<li><input name='question_options_$counter' type='radio' value='B' />" . $row["B"] . "</li>
+										<li><input name='question_options_$counter' type='radio' value='C' />" . $row["C"] . "</li>
+										<li><input name='question_options_$counter' type='radio' value='D' />" . $row["D"] . "</li>
+										<li><input name='question_options_$counter' type='radio' value='E' />" . $row["E"] . "</li>
+									</ul>
+									</form>
+								</div>
+							";
+							$counter = $counter + 1;
+						}
+					}
+				?>
 			</div>
 	
 			<div class="card">
 				<div class="quants">QUANTS</div>
-					<div class="card">
-						<form class="questionForm" id="q_q1" data-question="1">
-							<h5>If −1&lt;h&lt;0, which of the following has the greatest value?</h5>
-							<ul>
-								<li><input name="q_q1" type="radio" value="a" />1+h</li>
-								<li><input name="q_q1" type="radio" value="b" />1-h</li>
-								<li><input name="q_q1" type="radio" value="c" />1+h^2</li>
-								<li><input name="q_q1" type="radio" value="d" />1-1/h</li>
-							</ul>
-						</form>
-					</div>
+					<?php
+					require 'connect.inc.php';
+					$query = "SELECT question, A, B, C, D, E FROM Questions WHERE type='Quants' ORDER BY RAND() LIMIT 3";
+					$result = mysqli_query($conn, $query);
+	 				if (mysqli_num_rows($result) > 0) {
+	 					$counter = 1;
+						while($row = mysqli_fetch_assoc($result)) {
+							echo '
+								<div class="card shadow-lg p-3 mb-5 bg-white rounded">
+									<form class="questionForm" id="question_$counter" data-question="1">
+									<h5>' . $row['question'] . '</h5>
+									<ul>
+										<li><input name="question_$counter_options" type="radio" value="A" />' . $row["A"] . '</li>
+										<li><input name="question_$counter_options" type="radio" value="B" />' . $row["B"]. '</li>
+										<li><input name="question_$counter_options" type="radio" value="C" />' . $row["C"]. '</li>
+										<li><input name="question_$counter_options" type="radio" value="D" />' . $row["D"]. '</li>
+										<li><input name="question_$counter_options" type="radio" value="E" />' . $row["E"]. '</li>
+									</ul>
+									</form>
+								</div>
+							';
+						}
+					}
+				?>
 				</div>
 			</div>
 		
 
-			<button id="submit"">SUBMIT</button>
+			<button id="submit" class="btn-primary" style="margin-left: 50%; margin-top: 1%" onclick="submitQuiz()">SUBMIT</button>
 			<div id="results"></div>
 			<br>
 			
 		</main>
-		<footer class="pull-left">TOTAL 2 Questions</div>
-		<script src="../js/jquery.js"></script>
-		<script scr="../js/quiz.js"></script>
+		<footer class="pull-left">TOTAL 6 Questions</div>
 	</div>	
 </div>
 </body>
@@ -120,3 +135,4 @@ session_start();
 
 
 <header>
+

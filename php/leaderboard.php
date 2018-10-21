@@ -46,7 +46,7 @@
 						<th width="70%"> Name </th>
 					  	<th width="30%"> Score </th>
 			  		</tr>
-			  		<tr>
+			  		<!-- <tr>
 			  			<td>Dhruv Bhagadia</td>
 			  			<td>340</td>
 			  		</tr>
@@ -56,7 +56,20 @@
 			  		</tr>
 			  		<tr>
 			  			<td>Varsha Chamaria</td>
-			  			<td>320</td>
+			  			<td>320</td> -->
+			  			<?php
+	 			  		require 'connect.inc.php';
+	 			  		$query = "SELECT user_name, score FROM Users ORDER BY score DESC";
+						$result = mysqli_query($conn, $query);
+	 					if (mysqli_num_rows($result) > 0) {
+							while($row = mysqli_fetch_assoc($result)) {
+								echo "<tr>
+				  						<td>" . $row['user_name'] . "</td>
+				  						<td>" . $row['score'] . "</td>
+				  					</tr>";
+							}
+						}
+	 			  		?>
 			  		</tr>
 				</tbody>
 		</table>
