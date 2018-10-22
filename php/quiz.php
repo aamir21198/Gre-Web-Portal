@@ -11,7 +11,81 @@ session_start();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/quiz.js"></script>
+	<!-- <script type="text/javascript" src="../js/quiz.js"></script> -->
+	<script type="text/javascript">
+		function submitQuiz() {
+			var score_v1 = checkVerbal1();
+			var score_v2 = checkVerbal2();
+			var score_v3 = checkVerbal3();
+			var score_q1 = checkQuants1();
+			var score_q2 = checkQuants2();
+			var score_q3 = checkQuants3();
+			var total = score_v1 + score_v2 + score_v3 + score_q1 + score_q2 + score_q3;
+			alert(total);
+		}
+
+		function checkVerbal1() {
+			var x = document.querySelector('input[name="question_options_1"]:checked').value;
+			var correct = document.getElementById("correct_options_1").value;
+			if(correct === x){
+				return 1;
+			}
+			else{
+				return 0;
+			}
+		}
+		function checkVerbal2() {
+			var x = document.querySelector('input[name="question_options_2"]:checked').value;
+			var correct = document.getElementById("correct_options_2").value;
+			if(correct === x){
+				return 1;
+			}
+			else{
+				return 0;
+			}
+		}
+		function checkVerbal3() {
+			var x = document.querySelector('input[name="question_options_3"]:checked').value;
+			var correct = document.getElementById("correct_options_3").value;
+			if(correct === x){
+				return 1;
+			}
+			else{
+				return 0;
+			}
+		}
+
+		function checkQuants1() {
+			var x = document.querySelector('input[name="question_option_1"]:checked').value;
+			var correct = document.getElementById("correct_option_1").value;
+			if(correct === x){
+				return 1;
+			}
+			else{
+				return 0;
+			}
+		}
+		function checkQuants2() {
+			var x = document.querySelector('input[name="question_option_2"]:checked').value;
+			var correct = document.getElementById("correct_option_2").value;
+			if(correct === x){
+				return 1;
+			}
+			else{
+				return 0;
+			}
+		}
+		function checkQuants3() {
+			var x = document.querySelector('input[name="question_option_3"]:checked').value;
+			var correct = document.getElementById("correct_option_3").value;
+			if(correct === x){
+				return 1;
+			}
+			else{
+				return 0;
+			}
+		}
+	</script>
 </head>
 <body style="background-color: #DCDCDC">
 	<nav class="navbar navbar-dark bg-dark">
@@ -67,7 +141,7 @@ session_start();
 				<div class="verbal">VERBAL</div>
 				<?php
 					require 'connect.inc.php';
-					$query = "SELECT question, A, B, C, D, E FROM Questions WHERE type='Verbal' ORDER BY RAND() LIMIT 3";
+					$query = "SELECT question, A, B, C, D, E, correct_option FROM Questions WHERE type='Verbal' ORDER BY RAND() LIMIT 3";
 					$result = mysqli_query($conn, $query);
 	 				if (mysqli_num_rows($result) > 0) {
 	 					$counter = 1;
@@ -82,6 +156,7 @@ session_start();
 										<li><input name='question_options_$counter' type='radio' value='C' />" . $row["C"] . "</li>
 										<li><input name='question_options_$counter' type='radio' value='D' />" . $row["D"] . "</li>
 										<li><input name='question_options_$counter' type='radio' value='E' />" . $row["E"] . "</li>
+										<li><input id='correct_options_$counter' disabled type='text' value=" . $row["correct_option"] . " style='visibility: hidden'/></li>
 									</ul>
 									</form>
 								</div>
@@ -96,25 +171,27 @@ session_start();
 				<div class="quants">QUANTS</div>
 					<?php
 					require 'connect.inc.php';
-					$query = "SELECT question, A, B, C, D, E FROM Questions WHERE type='Quants' ORDER BY RAND() LIMIT 3";
+					$query = "SELECT question, A, B, C, D, E, correct_option FROM Questions WHERE type='Quants' ORDER BY RAND() LIMIT 3";
 					$result = mysqli_query($conn, $query);
 	 				if (mysqli_num_rows($result) > 0) {
 	 					$counter = 1;
 						while($row = mysqli_fetch_assoc($result)) {
-							echo '
-								<div class="card shadow-lg p-3 mb-5 bg-white rounded">
-									<form class="questionForm" id="question_$counter" data-question="1">
-									<h5>' . $row['question'] . '</h5>
+							echo "
+								<div class='card shadow-lg p-3 mb-5 bg-white rounded'>
+									<form class='questionForm' id='question_$counter' data-question='1'>
+									<h5>" . $row['question'] . "</h5>
 									<ul>
-										<li><input name="question_$counter_options" type="radio" value="A" />' . $row["A"] . '</li>
-										<li><input name="question_$counter_options" type="radio" value="B" />' . $row["B"]. '</li>
-										<li><input name="question_$counter_options" type="radio" value="C" />' . $row["C"]. '</li>
-										<li><input name="question_$counter_options" type="radio" value="D" />' . $row["D"]. '</li>
-										<li><input name="question_$counter_options" type="radio" value="E" />' . $row["E"]. '</li>
+										<li><input name='question_option_$counter' type='radio' value='A' />" . $row["A"] . "</li>
+										<li><input name='question_option_$counter' type='radio' value='B' />" . $row["B"] . "</li>
+										<li><input name='question_option_$counter' type='radio' value='C' />" . $row["C"] . "</li>
+										<li><input name='question_option_$counter' type='radio' value='D' />" . $row["D"] . "</li>
+										<li><input name='question_option_$counter' type='radio' value='E' />" . $row["E"] . "</li>
+										<li><input id='correct_option_$counter' disabled type='text' value=" . $row["correct_option"] . " style='visibility: hidden'/></li>
 									</ul>
 									</form>
 								</div>
-							';
+							";
+							$counter = $counter + 1;
 						}
 					}
 				?>
