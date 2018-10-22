@@ -42,12 +42,9 @@ session_start();
 						?>
 					</strong>
 					<button 
-						<?php
-							session_unset(); 
-							session_destroy();
-						?>
-					onclick="document.location.href='../templates/home.html'" type="button" class="btn btn-secondary signup_button" 
-					data-toggle="dropdown">
+						
+					onclick="document.location.href='../php/Home.php'" type="button" class="btn btn-secondary signup_button" 
+					data-toggle="dropdown" action='../php/logout.php'>
 					Log-out
 					</button>
 				</div>

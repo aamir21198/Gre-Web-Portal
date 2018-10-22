@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'connect.inc.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -11,7 +12,7 @@ session_start();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-	<!-- <script type="text/javascript" src="../js/quiz.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		function submitQuiz() {
 			var score_v1 = checkVerbal1();
@@ -21,7 +22,14 @@ session_start();
 			var score_q2 = checkQuants2();
 			var score_q3 = checkQuants3();
 			var total = score_v1 + score_v2 + score_v3 + score_q1 + score_q2 + score_q3;
-			alert(total);
+			// alert(total);
+
+			$.post('/WD/php/submitQuiz.php', {score: total}).done(function(data) {
+    			alert(data);
+    			// location.href='LoggedInHome.php';
+			});
+			
+			
 		}
 
 		function checkVerbal1() {
@@ -87,12 +95,13 @@ session_start();
 		}
 	</script>
 </head>
+
 <body style="background-color: #DCDCDC">
 	<nav class="navbar navbar-dark bg-dark">
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div>
-					<a href="../templates/home.html" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
+					<a href="../php/Home.php" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
 				</div>
 				<div class="dropdown" style="display:none">
 					<button type="button" class="btn btn-secondary dropdown-toggle mx-2 my-2" data-toggle="dropdown">
@@ -109,7 +118,7 @@ session_start();
 					<a href="Universities-Courses.php" class="nav-link bg-secondary text-light rounded mx-2">Universities/Courses</a>
 				</div>
 				<div>
-					<a href="" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
+					<a href="leaderboard.php" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
 				</div>
 				<div class="sign_or_log">
 					Hello
@@ -120,12 +129,8 @@ session_start();
 						?>
 					</strong>
 					<button 
-						<?php
-							session_unset(); 
-							session_destroy();
-						?>
 					onclick="document.location.href='../templates/home.html'" type="button" class="btn btn-secondary signup_button" 
-					data-toggle="dropdown">
+					data-toggle="dropdown" action ="logout.php">
 					Log-out
 					</button>
 				</div>
@@ -140,7 +145,6 @@ session_start();
 			<div class="card">
 				<div class="verbal">VERBAL</div>
 				<?php
-					require 'connect.inc.php';
 					$query = "SELECT question, A, B, C, D, E, correct_option FROM Questions WHERE type='Verbal' ORDER BY RAND() LIMIT 3";
 					$result = mysqli_query($conn, $query);
 	 				if (mysqli_num_rows($result) > 0) {
@@ -170,7 +174,6 @@ session_start();
 			<div class="card">
 				<div class="quants">QUANTS</div>
 					<?php
-					require 'connect.inc.php';
 					$query = "SELECT question, A, B, C, D, E, correct_option FROM Questions WHERE type='Quants' ORDER BY RAND() LIMIT 3";
 					$result = mysqli_query($conn, $query);
 	 				if (mysqli_num_rows($result) > 0) {
