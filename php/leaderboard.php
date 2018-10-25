@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Universities/Courses</title>
+	<title>Leaderboard</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/Universities-Courses.css">
@@ -18,7 +18,7 @@
 			<nav class="navbar navbar-inverse">
 				<div class="container-fluid">
 					<div>
-						<a href="Home.php" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
+						<a href="LoggedInHome.php" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
 					</div>
 					<div class="dropdown">
 						<button type="button" class="btn btn-secondary dropdown-toggle mx-2 my-2" data-toggle="dropdown">
@@ -46,20 +46,9 @@
 						<th width="70%"> Name </th>
 					  	<th width="30%"> Score </th>
 			  		</tr>
-			  		<!-- <tr>
-			  			<td>Dhruv Bhagadia</td>
-			  			<td>340</td>
-			  		</tr>
-			  		<tr>
-			  			<td>Aamir Darukhanawal</td>
-			  			<td>330</td>
-			  		</tr>
-			  		<tr>
-			  			<td>Varsha Chamaria</td>
-			  			<td>320</td> -->
 			  			<?php
 	 			  		require 'connect.inc.php';
-	 			  		$query = "SELECT user_name, score FROM Users ORDER BY score DESC";
+	 			  		$query = "SELECT * FROM leaderboard ORDER BY score DESC";
 						$result = mysqli_query($conn, $query);
 	 					if (mysqli_num_rows($result) > 0) {
 							while($row = mysqli_fetch_assoc($result)) {

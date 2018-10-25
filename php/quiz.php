@@ -22,7 +22,8 @@ require 'connect.inc.php';
 			var score_q2 = checkQuants2();
 			var score_q3 = checkQuants3();
 			var total = score_v1 + score_v2 + score_v3 + score_q1 + score_q2 + score_q3;
-			// alert(total);
+			total = Math.floor(total * 340 / 6);
+			alert("Score: " + total);
 
 			$.post('/WD/php/submitQuiz.php', {score: total}).done(function(data) {
     			alert(data);
@@ -202,7 +203,7 @@ require 'connect.inc.php';
 			</div>
 		
 
-			<button id="submit" class="btn-primary" style="margin-left: 50%; margin-top: 1%" onclick="submitQuiz()">SUBMIT</button>
+			<a href="leaderboard.php"><button id="submit" class="btn-primary" style="margin-left: 50%; margin-top: 1%" onclick="submitQuiz()">SUBMIT</button></a>	 
 			<div id="results"></div>
 			<br>
 			

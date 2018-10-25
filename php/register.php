@@ -24,7 +24,7 @@ if (isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']) &
 			echo 'Username already taken';
 		}
 		else {
-			$query = "INSERT INTO Users VALUES ('$user_name', '$password', '$first_name', '$last_name', '$email', '$university', '$course', '$degree', '$college')";
+			$query = "INSERT INTO Users VALUES ('$user_name', '$password', '$first_name', '$last_name', '$email', '$university', '$course', '$degree', '$college',0)";
 
 			if (mysqli_query($conn, $query)) {
 				$_SESSION["uname"] = $_POST['uname'];

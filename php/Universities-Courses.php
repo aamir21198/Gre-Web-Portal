@@ -15,24 +15,24 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div>
-					<a href="../templates/home.html" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
+					<a href="LoggedInHome.php" class="nav-link bg-secondary text-light rounded mx-2">Home</a>
 				</div>
 				<div class="dropdown">
 					<button type="button" class="btn btn-secondary dropdown-toggle mx-2 my-2" data-toggle="dropdown">
 						Test Preparation
 					</button>
 					<div class="dropdown-menu bg-light justify-content-center">
-						<a class="dropdown-item text-success" href="https://www.w3schools.com/bootstrap4/bootstrap_dropdowns.asp">Easy</a>
-						<a class="dropdown-item text-warning" href="#">Medium</a>
-						<a class="dropdown-item text-danger" href="#">Hard</a>
-						<a class="dropdown-item text-primary" href="#">Mock Test</a>
+						<a class="dropdown-item text-success" href="quiz.php">Easy</a>
+						<a class="dropdown-item text-warning" href="quiz.php">Medium</a>
+						<a class="dropdown-item text-danger" href="quiz.php">Hard</a>
+						<a class="dropdown-item text-primary" href="quiz.php">Mock Test</a>
 					</div>
 				</div>
 				<div style="display: none">
 					<a href="" class="nav-link bg-secondary text-light rounded mx-2">Universities/Courses</a>
 				</div>
 				<div>
-					<a href="" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
+					<a href="leaderboard.php" class="nav-link bg-secondary text-light rounded mx-2">Leaderboard</a>
 				</div>
 			</div>
 		</nav>
